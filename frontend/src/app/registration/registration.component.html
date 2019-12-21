@@ -1,0 +1,23 @@
+<div class = "TableOfRegistration">
+
+    <h2>Wellcome to the Kingdom, buddy!</h2>
+    <table>
+        <tr>
+        <td>Login: </td>
+        <td><input [(ngModel)]="user.login" placeholder="Kappa322"/></td>
+        <td class = "Validation">{{userV.loginValidation}}</td>
+      </tr>
+      <tr>
+        <td>Password: </td>
+        <td><input type="password" [(ngModel)]="user.password" placeholder="sUpEr_NaTuRaL2007"/></td>
+        <td class = "Validation">{{userV.passwordValidation}}</td>
+      </tr>
+      <tr>
+        <td>Description: </td>
+        <td><input [(ngModel)]="user.desciption" placeholder=""/></td>
+      </tr>
+    </table>
+  
+    <button (click)="registerOnSite()">Submit</button>
+  
+  </div>

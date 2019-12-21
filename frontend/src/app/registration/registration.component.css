@@ -1,0 +1,59 @@
+.TableOfRegistration {
+    parding-top: 20px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-right: 20px;
+    margin-left: 20px;
+    border-radius: 20px;
+    background-color: white;
+    alignment: center;
+    width: 500px;
+    height: 380px;
+  }
+  .TableOfRegistration h2 {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-right: 20px;
+    margin-left: 20px;
+    color: mediumblue;
+    font-family: "Arial";
+  }
+  .TableOfRegistration table {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-right: 20px;
+    margin-left: 20px;
+    border-radius: 10px;
+    alignment: center;
+    color: mediumblue;
+    font-family: "Arial";
+  }
+  .TableOfRegistration button {
+    display: inline-block;
+    padding: 10px 10px;
+    margin-left: 175px;
+    font-size: 15px;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    outline: none;
+    color: white;
+    background-color: mediumblue;
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 5px #999;
+    width: 150px;
+    font-family: "Arial"
+  }
+  .TableOfRegistration button:hover {
+    background-color: mediumblue;
+  }
+  .TableOfRegistration button:active {
+    background-color: darkblue;
+    box-shadow: 0 2px #666;
+    transform: translateY(2px);
+  }
+  .Validation {
+    color: red;
+    font-size: 10px;
+  }
