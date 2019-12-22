@@ -7,7 +7,7 @@ class User:
     who_like: [int]
     whom_like: [int]
 
-    def __init__(self, id=-1, login='', password='', description='', photo_url="", who_like=[], whom_like=[]):
+    def __init__(self, id, login, password, description, photo_url, who_like, whom_like):
         super().__init__()
         self.id = id
         self.login = login
@@ -21,3 +21,9 @@ class Mem:
     id: int
     url: str
     user_id: int
+
+    def __init__(self, id, url, user_id):
+        super().__init__()
+        self.id = id
+        self.url = url
+        self.user_id = user_id
