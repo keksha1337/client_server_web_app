@@ -66,7 +66,14 @@ def getMem():
     for mem in whole_memes_list:
         if mem['user_id'] != user['id'] and mem['user_id'] not in user['whom_like']:
             result_mem_list.append(entities.Mem(mem['id'], mem['url'], mem['user_id']).__dict__)
+    
     return json.dumps(result_mem_list)
+
+@app.route('/mem/like', methods=['GET'])
+def likeMem():
+    liked_user_mongo = db['users'].find_one({"id": int(request.args.get('user_id'))})
+    liked_user = entities.User(liked_user_mongo['id'], liked_user_mongo['login'], liked_user_mongo['password'], liked_user_mongo['description'], liked_user_mongo['photo_url'], liked_user_mongo['who_like'], liked_user_mongo['whom_like'])
+    return liked_user.__dict__
 
 if __name__ == '__main__':
     app.run()
