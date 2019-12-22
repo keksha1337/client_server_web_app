@@ -9,7 +9,7 @@ app = Flask(__name__)
 client = MongoClient()
 db = client['user']
 
-@app.route('/user')
+@app.route('/user', methods=['GET'])
 def userAPI():
     user_res = db['users'].find_one({"login": request.args.get('login')}) 
 
@@ -19,6 +19,27 @@ def userAPI():
             return json.dumps(user.__dict__)
     except:
         pass
+
+@app.route('/user', methods=['POST'])
+def userAdd():
+    try:
+        max_id = db['users'].find_one(sort=[("id", -1)])['id']
+    except:
+        max_id = -1
+    data = request.get_json()
+
+    login = data['login']
+    password = data['password']
+    description = data['description']
+    photo_url = data['photo_url']
+    who_like = data['who_like']
+    whom_like = data['whom_like']
+
+    user = entities.User(max_id + 1, login, password, description, photo_url, who_like, whom_like)
+
+    db['users'].insert_one(user.__dict__)
+
+    return '{"result": "OK"}'
 
 @app.route('/mem', methods=['POST'])
 def uploadMem():
